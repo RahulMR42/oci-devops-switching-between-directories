@@ -23,32 +23,17 @@ steps:
       ls -ltr ${OCI_PRIMARY_SOURCE_DIR}
 
 
-#   - type: Command
-#     timeoutInSeconds: 600
-#     name: "Build the java app"
-#     command: |
-#       cd ${OCI_WORKSPACE_DIR}/${code_repo_name}
-#       ./gradlew build
-#       ./gradlew test  
+  - type: Command
+    timeoutInSeconds: 600
+    name: "Show content from ${TF_PROVIDER_PATH}""
+    command: |
+      ls -ltr ${OCI_PRIMARY_SOURCE_DIR}/${TF_PROVIDER_PATH}/${TF_RESOURC_REFERENCE}
 
-#     onFailure:
-#       - type: Command
-#         command: |
-#           echo "Handling Failure"
-#           echo "Failure successfully handled"
-#         timeoutInSeconds: 40
-#         runAs: root
+    onFailure:
+      - type: Command
+        command: |
+          echo "Handling Failure"
+          echo "Failure successfully handled"
+        timeoutInSeconds: 40
+        runAs: root
 
-#   - type: Command
-#     timeoutInSeconds: 1200
-#     name: "Build container image"
-#     command: |
-#       cd ${OCI_WORKSPACE_DIR}/${code_repo_name}
-#       docker build --pull --rm -t java_micronaut_sample .      
-     
-# outputArtifacts:
-#   - name: java_micronaut_sample
-#     type: DOCKER_IMAGE
-#     # this location tag doesn't effect the tag used to deliver the container image
-#     # to the Container Registry
-#     location: java_micronaut_sample:latest
