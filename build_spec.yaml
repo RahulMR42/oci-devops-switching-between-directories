@@ -27,6 +27,7 @@ steps:
     timeoutInSeconds: 600
     name: "Into a specific resource path"
     command: |
+      echo "In to Path - ${TF_PROVIDER_PATH}/${TF_RESOURC_REFERENCE}"
       ls -ltr ${OCI_PRIMARY_SOURCE_DIR}/${TF_PROVIDER_PATH}/${TF_RESOURC_REFERENCE}
 
     onFailure:
