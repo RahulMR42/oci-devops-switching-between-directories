@@ -30,6 +30,9 @@ Sample exeuction via OCI CLI and snippets from corresponding build run.
 
 ----
 
+#### Use OCI TF Provider and resource type as OCU launch-resource 
+ 
+
 ```
 $ oci devops build-run create --build-pipeline-id ocid1.devopsbuildpipeline.oc1.iad.xxjq --build-run-arguments '{ "items": [ { "name": "TF_RESOURC_REFERENCE", "value": "launch-instance" }, { "name": "TF_PROVIDER_PATH", "value": "terraform-provider-oci" } ] }'  
 
