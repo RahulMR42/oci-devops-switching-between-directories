@@ -30,8 +30,8 @@ Sample exeuction via OCI CLI and snippets from corresponding build run.
 
 ----
 
-#### Use OCI TF Provider and resource type as OCU launch-resource 
- 
+#### Use OCI TF Provider and resource type as OCU launch-instance 
+
 
 ```
 $ oci devops build-run create --build-pipeline-id ocid1.devopsbuildpipeline.oc1.iad.xxjq --build-run-arguments '{ "items": [ { "name": "TF_RESOURC_REFERENCE", "value": "launch-instance" }, { "name": "TF_PROVIDER_PATH", "value": "terraform-provider-oci" } ] }'  
@@ -40,12 +40,17 @@ $ oci devops build-run create --build-pipeline-id ocid1.devopsbuildpipeline.oc1.
 
 ![](images/oci_launch_instance.png)
 
+
+#### Use OCI TF Provider and resource type as OCI create-vcn
+
 ```
 $ oci devops build-run create --build-pipeline-id ocid1.devopsbuildpipeline.oc1.iad.xxjq  --build-run-arguments '{ "items": [ { "name": "TF_RESOURC_REFERENCE", "value": "create-vcn" }, { "name": "TF_PROVIDER_PATH", "value": "terraform-provider-oci" } ] }' – Same pipeline ,with OCI buit this time with create-vcn resource 
 ```
 
 ![](images/oci_vcn.png)
 
+
+#### Use GCP  TF Provider and resource type as GCP create-vpc
 
 ```
 $ oci devops build-run create --build-pipeline-id ocid1.devopsbuildpipeline.oc1.iad.xxjq --build-run-arguments '{ "items": [ { "name": "TF_RESOURC_REFERENCE", "value": "create-vpc" }, { "name": "TF_PROVIDER_PATH", "value": "terraform-provider-gcp" } ] }' – In this case switching in to GCP TF with a resource type of GCP 
