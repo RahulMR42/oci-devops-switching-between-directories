@@ -25,7 +25,7 @@ steps:
 
   - type: Command
     timeoutInSeconds: 600
-    name: "{{TF_PROVIDER_PATH}}"
+    name: "'${TF_PROVIDER_PATH}'"
     command: |
       ls -ltr ${OCI_PRIMARY_SOURCE_DIR}/${TF_PROVIDER_PATH}/${TF_RESOURC_REFERENCE}
 
