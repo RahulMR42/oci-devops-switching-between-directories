@@ -20,7 +20,7 @@ steps:
     name: "Display all folders"
     timeoutInSeconds: 40
     command: |
-      ls -ltr ${OCI_WORKSPACE_DIR}/${OCI_PRIMARY_SOURCE_DIR}
+      ls -ltr ${OCI_PRIMARY_SOURCE_DIR}
 
 
 #   - type: Command
